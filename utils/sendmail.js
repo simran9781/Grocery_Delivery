@@ -6,22 +6,22 @@ const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
   service:"gmail",
-  secure: false, // true for port 465, false for other ports
+  secure: false, 
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
 });
 
-// async..await is not allowed in global scope, must use a wrapper
+
 async function main() {
-  // send mail with defined transport object
+ 
   const info = await transporter.sendMail({
-    from: process.env.EMAIL_USER, // sender address
-    to: email, // list of receivers
-    subject: subject, // Subject line
-    text: "Please click the link to verify your email", // plain text body
-    html: `<a href=${message}>Link</a>`, // html body
+    from: process.env.EMAIL_USER, 
+    to: email, 
+    subject: subject,
+    text: "Please click the link to verify your email", 
+    html: `<a href=${message}>Link</a>`, 
   });
 
   console.log("Message sent: %s", info.messageId);

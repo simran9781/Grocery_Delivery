@@ -9,12 +9,14 @@ app.use(express.json());
 app.use(cors());
 
 // Import auth routes
-const authRoutes = require("./routers/auth");
-const verifyRoutes = require("./routers/verify");
+const authRoutes = require("./routes/auth");
+const verifyRoutes = require("./routes/verify");
+const cartRoutes = require("./routes/cart");
 
 // Use routes
 app.use("/auth", authRoutes);
 app.use("/verify", verifyRoutes);
+app.use("/cart", cartRoutes);
 
 // Server listening
 

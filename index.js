@@ -17,6 +17,7 @@ const productRoutes = require("./routes/product");
 const categoryproduct = require("./routes/categoryproduct")
 const wishlistRoutes = require("./routes/wishlist");
 const reviewRoutes = require("./routes/review");
+const order = require("./routes/order");
 
 
 // Use routes
@@ -28,6 +29,7 @@ app.use("/products", productRoutes);
 app.use("/category-product",categoryproduct);
 app.use("/wishlist", wishlistRoutes);
 app.use("/reviews", reviewRoutes); 
+app.use("/order",order);
 
 
 // Server listening

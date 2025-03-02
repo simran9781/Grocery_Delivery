@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 const sendmail=(email,subject,message)=>
 {
 const transporter = nodemailer.createTransport({
@@ -7,8 +8,8 @@ const transporter = nodemailer.createTransport({
   service:"gmail",
   secure: false, // true for port 465, false for other ports
   auth: {
-    user: "",
-    pass: "",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -16,7 +17,7 @@ const transporter = nodemailer.createTransport({
 async function main() {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: 'simranpreet6529@gmail.com', // sender address
+    from: process.env.EMAIL_USER, // sender address
     to: email, // list of receivers
     subject: subject, // Subject line
     text: "Please click the link to verify your email", // plain text body

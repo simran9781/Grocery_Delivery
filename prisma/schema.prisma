@@ -43,9 +43,10 @@ model Product {
   name        String
   description String?
   price       Float
-  stock       Int
+  stock       Int? 
+  quantity    Int?
   category    Category @relation(fields: [categoryId], references: [id])
-  image       String
+  image       String? 
   categoryId  String
   reviews     Review[]
   createdAt   DateTime @default(now())

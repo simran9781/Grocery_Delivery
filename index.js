@@ -12,11 +12,23 @@ app.use(cors());
 const authRoutes = require("./routes/auth");
 const verifyRoutes = require("./routes/verify");
 const cartRoutes = require("./routes/cart");
+const searchRoutes = require("./routes/search");
+const productRoutes = require("./routes/product");
+const categoryproduct = require("./routes/categoryproduct")
+const wishlistRoutes = require("./routes/wishlist");
+const reviewRoutes = require("./routes/review");
+
 
 // Use routes
 app.use("/auth", authRoutes);
 app.use("/verify", verifyRoutes);
 app.use("/cart", cartRoutes);
+app.use("/search", searchRoutes);
+app.use("/products", productRoutes);
+app.use("/category-product",categoryproduct);
+app.use("/wishlist", wishlistRoutes);
+app.use("/reviews", reviewRoutes); 
+
 
 // Server listening
 

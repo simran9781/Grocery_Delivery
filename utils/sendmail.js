@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
   service:"gmail",
   secure: false, // true for port 465, false for other ports
   auth: {
-    user: "simranpreet6529@gmail.com",
-    pass: "kffh abyi trqc ljza",
+    user: "",
+    pass: "",
   },
 });
 
@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 async function main() {
   // send mail with defined transport object
   const info = await transporter.sendMail({
-    from: 'simranpreet6529@gmail.com', // sender address
+    from: '', // sender address
     to: email, // list of receivers
     subject: subject, // Subject line
     text: "Please click the link to verify your email", // plain text body
